@@ -18,8 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         val activityComponent: ActivityComponent =
             ((application as TestApplication).getComponent())
-                .getActivityComponentBuilder().horsePower(100)
-                .engineCapacity(50).build()
+                .getActivityComponentFactory().create(100, 50);
 
         activityComponent.inject(this)
 

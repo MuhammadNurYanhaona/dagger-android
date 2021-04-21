@@ -1,6 +1,7 @@
 package com.example.testkotlin2
 
 import android.app.Application
+import com.example.testkotlin2.module.DriverModule
 
 class TestApplication : Application() {
 
@@ -8,7 +9,7 @@ class TestApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        appComponent = DaggerAppComponent.create()
+        appComponent = DaggerAppComponent.factory().create(DriverModule("Adeel Hosain"))
     }
 
     public fun getComponent() : AppComponent {
